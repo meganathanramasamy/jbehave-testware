@@ -1,0 +1,182 @@
+{
+  "uid" : "8bc9f1a4d573cf8d",
+  "name" : "API - GET Test",
+  "title" : "API - GET Test",
+  "time" : {
+    "start" : 1663100264104,
+    "stop" : 1663100265199,
+    "duration" : 1095
+  },
+  "summary" : {
+    "attachments" : 2,
+    "steps" : 8
+  },
+  "failure" : null,
+  "description" : {
+    "value" : "GET Test",
+    "type" : "TEXT"
+  },
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "suite" : {
+    "uid" : "4a6cfdcaa2e62933",
+    "name" : "api.story",
+    "title" : "api.story"
+  },
+  "steps" : [ {
+    "name" : "Given Generate the GET uri and parameters for 'reqresapi.uri' endpoint",
+    "title" : "Given Generate the GET uri and parameters for 'reqresapi.uri' endpoint",
+    "time" : {
+      "start" : 1663100264113,
+      "stop" : 1663100264158,
+      "duration" : 45
+    },
+    "summary" : {
+      "attachments" : 1,
+      "steps" : 1
+    },
+    "status" : "PASSED",
+    "attachments" : [ {
+      "title" : "Headers",
+      "source" : "338daa9a-f9c3-4a4e-bb05-321be1db6ef5-attachment.txt",
+      "type" : "text/plain",
+      "size" : 44,
+      "uid" : "f7c7d6da301d0083"
+    } ],
+    "steps" : [ {
+      "name" : "Uri: 'https://reqres.in/api/users?page=2'",
+      "title" : "Uri: 'https://reqres.in/api/users?page=2'",
+      "time" : {
+        "start" : 1663100264114,
+        "stop" : 1663100264114,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    } ]
+  }, {
+    "name" : "When I send a GET request",
+    "title" : "When I send a GET request",
+    "time" : {
+      "start" : 1663100264158,
+      "stop" : 1663100265183,
+      "duration" : 1025
+    },
+    "summary" : {
+      "attachments" : 1,
+      "steps" : 3
+    },
+    "status" : "PASSED",
+    "attachments" : [ {
+      "title" : "Actual Response :",
+      "source" : "4e782287-c204-48e6-ac45-a7712136c02e-attachment",
+      "type" : "text/json",
+      "size" : 1625,
+      "uid" : "7ec3547048daf09"
+    } ],
+    "steps" : [ {
+      "name" : "Response Status: 200",
+      "title" : "Response Status: 200",
+      "time" : {
+        "start" : 1663100265148,
+        "stop" : 1663100265148,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    }, {
+      "name" : "Response Line: HTTP/1.1 200 OK",
+      "title" : "Response Line: HTTP/1.1 200 OK",
+      "time" : {
+        "start" : 1663100265148,
+        "stop" : 1663100265148,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    }, {
+      "name" : "Response Time(milliseconds): 512",
+      "title" : "Response Time(milliseconds): 512",
+      "time" : {
+        "start" : 1663100265148,
+        "stop" : 1663100265148,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    } ]
+  }, {
+    "name" : "Then I validate the response with '200'",
+    "title" : "Then I validate the response with '200'",
+    "time" : {
+      "start" : 1663100265183,
+      "stop" : 1663100265183,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 1
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ {
+      "name" : "Matched Field: StatusCode: Expected=200, Actual= 200 are EQUAL.",
+      "title" : "Matched Field: StatusCode: Expected=200, Actual= 200 are EQUAL.",
+      "time" : {
+        "start" : 1663100265183,
+        "stop" : 1663100265183,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    } ]
+  } ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "testIds" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "framework",
+    "value" : "JBehave"
+  }, {
+    "name" : "suite-title",
+    "value" : "api.story"
+  }, {
+    "name" : "story",
+    "value" : "common"
+  }, {
+    "name" : "feature",
+    "value" : "features"
+  }, {
+    "name" : "suite-name",
+    "value" : "api.story"
+  } ],
+  "parameters" : [ ]
+}

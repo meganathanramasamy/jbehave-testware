@@ -1,0 +1,18 @@
+{
+  "id" : "05aa1e2b-1df2-428c-8aa5-d7188730a778",
+  "name" : "Allure Test Pack",
+  "url" : null,
+  "parameter" : [ {
+    "name" : "Environment",
+    "key" : "Environment",
+    "value" : "env"
+  }, {
+    "name" : "Threads",
+    "key" : "Threads",
+    "value" : "1"
+  }, {
+    "name" : "Project.Name",
+    "key" : "Project.Name",
+    "value" : "TestProject"
+  } ]
+}

@@ -1,0 +1,194 @@
+{
+  "uid" : "493a7958884bd3d0",
+  "name" : "API - PATCH Test",
+  "title" : "API - PATCH Test",
+  "time" : {
+    "start" : 1663100265675,
+    "stop" : 1663100265900,
+    "duration" : 225
+  },
+  "summary" : {
+    "attachments" : 4,
+    "steps" : 8
+  },
+  "failure" : null,
+  "description" : {
+    "value" : "PATCH Test",
+    "type" : "TEXT"
+  },
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "suite" : {
+    "uid" : "4a6cfdcaa2e62933",
+    "name" : "api.story",
+    "title" : "api.story"
+  },
+  "steps" : [ {
+    "name" : "Given Generate the PATCH uri and payload for 'reqresapi.uri' endpoint",
+    "title" : "Given Generate the PATCH uri and payload for 'reqresapi.uri' endpoint",
+    "time" : {
+      "start" : 1663100265675,
+      "stop" : 1663100265675,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 2,
+      "steps" : 1
+    },
+    "status" : "PASSED",
+    "attachments" : [ {
+      "title" : "Headers",
+      "source" : "f1205e82-1459-4526-8d86-ac047b72a546-attachment.txt",
+      "type" : "text/plain",
+      "size" : 44,
+      "uid" : "222a8377cea4fb69"
+    }, {
+      "title" : "Request Body:",
+      "source" : "09731fbd-8b5f-4bb6-be90-d36ea959a9d6-attachment.txt",
+      "type" : "text/plain",
+      "size" : 47,
+      "uid" : "abadc4efa4efcbff"
+    } ],
+    "steps" : [ {
+      "name" : "Uri: 'https://reqres.in/api/users/2'",
+      "title" : "Uri: 'https://reqres.in/api/users/2'",
+      "time" : {
+        "start" : 1663100265675,
+        "stop" : 1663100265675,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    } ]
+  }, {
+    "name" : "When I send a PATCH request",
+    "title" : "When I send a PATCH request",
+    "time" : {
+      "start" : 1663100265675,
+      "stop" : 1663100265900,
+      "duration" : 225
+    },
+    "summary" : {
+      "attachments" : 2,
+      "steps" : 3
+    },
+    "status" : "PASSED",
+    "attachments" : [ {
+      "title" : "Request Body :",
+      "source" : "15f75f5e-fc63-47fb-9f00-99e5c4242316-attachment",
+      "type" : "text/json",
+      "size" : 47,
+      "uid" : "422bff71488ba8d8"
+    }, {
+      "title" : "Actual Response :",
+      "source" : "84876cb7-db29-473a-ab81-d912e6bdff9c-attachment",
+      "type" : "text/json",
+      "size" : 92,
+      "uid" : "bf392cb3926e8738"
+    } ],
+    "steps" : [ {
+      "name" : "Response Status: 200",
+      "title" : "Response Status: 200",
+      "time" : {
+        "start" : 1663100265900,
+        "stop" : 1663100265900,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    }, {
+      "name" : "Response Line: HTTP/1.1 200 OK",
+      "title" : "Response Line: HTTP/1.1 200 OK",
+      "time" : {
+        "start" : 1663100265900,
+        "stop" : 1663100265900,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    }, {
+      "name" : "Response Time(milliseconds): 225",
+      "title" : "Response Time(milliseconds): 225",
+      "time" : {
+        "start" : 1663100265900,
+        "stop" : 1663100265900,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    } ]
+  }, {
+    "name" : "Then I validate the response with '200'",
+    "title" : "Then I validate the response with '200'",
+    "time" : {
+      "start" : 1663100265900,
+      "stop" : 1663100265900,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 1
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ {
+      "name" : "Matched Field: StatusCode: Expected=200, Actual= 200 are EQUAL.",
+      "title" : "Matched Field: StatusCode: Expected=200, Actual= 200 are EQUAL.",
+      "time" : {
+        "start" : 1663100265900,
+        "stop" : 1663100265900,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    } ]
+  } ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "testIds" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "framework",
+    "value" : "JBehave"
+  }, {
+    "name" : "suite-title",
+    "value" : "api.story"
+  }, {
+    "name" : "story",
+    "value" : "common"
+  }, {
+    "name" : "feature",
+    "value" : "features"
+  }, {
+    "name" : "suite-name",
+    "value" : "api.story"
+  } ],
+  "parameters" : [ ]
+}

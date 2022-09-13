@@ -1,0 +1,86 @@
+{
+  "hosts" : [ {
+    "title" : "default",
+    "threads" : [ {
+      "title" : "default",
+      "testCases" : [ {
+        "uid" : "c92cc20260bd3bba",
+        "name" : "Test Cases List",
+        "title" : "Test Cases List",
+        "time" : {
+          "start" : 1663100266135,
+          "stop" : 1663100266135,
+          "duration" : 0
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "8bc9f1a4d573cf8d",
+        "name" : "API - GET Test",
+        "title" : "API - GET Test",
+        "time" : {
+          "start" : 1663100264104,
+          "stop" : 1663100265199,
+          "duration" : 1095
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "4a163c5be71d8551",
+        "name" : "API - POST Test",
+        "title" : "API - POST Test",
+        "time" : {
+          "start" : 1663100265199,
+          "stop" : 1663100265453,
+          "duration" : 254
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "d483a47bebd3d95f",
+        "name" : "API - PUT Test",
+        "title" : "API - PUT Test",
+        "time" : {
+          "start" : 1663100265453,
+          "stop" : 1663100265673,
+          "duration" : 220
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "493a7958884bd3d0",
+        "name" : "API - PATCH Test",
+        "title" : "API - PATCH Test",
+        "time" : {
+          "start" : 1663100265675,
+          "stop" : 1663100265900,
+          "duration" : 225
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "6006ae2959acae50",
+        "name" : "API - DELETE Test",
+        "title" : "API - DELETE Test",
+        "time" : {
+          "start" : 1663100265900,
+          "stop" : 1663100266104,
+          "duration" : 204
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "8dd4ac8a891c4543",
+        "name" : "Login Test",
+        "title" : "Login Test",
+        "time" : {
+          "start" : 1663100266166,
+          "stop" : 1663100276812,
+          "duration" : 10646
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      } ]
+    } ]
+  } ]
+}

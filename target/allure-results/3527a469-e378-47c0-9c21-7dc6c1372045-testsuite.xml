@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1663100266135" stop="1663100266135" version="1.5.4" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>common.story</name>
+    <title>common.story</title>
+    <test-cases>
+        <test-case start="1663100266135" stop="1663100266135" status="passed">
+            <name>Test Cases List</name>
+            <title>Test Cases List</title>
+            <description type="text"></description>
+            <steps>
+                <step start="1663100266135" stop="1663100266135" status="passed">
+                    <name>Given Read the Test case Names:</name>
+                    <title>Given Read the Test case Names:</title>
+                    <attachments>
+                        <attachment title="Testcase List" source="f8f2e32f-bb6f-4211-b4ed-0f49468d5239-attachment.csv" type="text/csv"/>
+                    </attachments>
+                    <steps>
+                        <step start="1663100266135" stop="1663100266135" status="passed">
+                            <name>pool-1-thread-1</name>
+                            <title>pool-1-thread-1</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <labels/>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="JBehave"/>
+        <label name="feature" value="features"/>
+        <label name="story" value="common"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

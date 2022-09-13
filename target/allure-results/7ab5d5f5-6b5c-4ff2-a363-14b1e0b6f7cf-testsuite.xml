@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1663100264104" stop="1663100266104" version="1.5.4" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>api.story</name>
+    <title>api.story</title>
+    <test-cases>
+        <test-case start="1663100264104" stop="1663100265199" status="passed">
+            <name>API - GET Test</name>
+            <title>API - GET Test</title>
+            <description type="text">GET Test</description>
+            <steps>
+                <step start="1663100264113" stop="1663100264158" status="passed">
+                    <name>Given Generate the GET uri and parameters for 'reqresapi.uri' endpoint</name>
+                    <title>Given Generate the GET uri and parameters for 'reqresapi.uri' endpoint</title>
+                    <attachments>
+                        <attachment title="Headers" source="338daa9a-f9c3-4a4e-bb05-321be1db6ef5-attachment.txt" type="text/plain"/>
+                    </attachments>
+                    <steps>
+                        <step start="1663100264114" stop="1663100264114" status="passed">
+                            <name>Uri: 'https://reqres.in/api/users?page=2'</name>
+                            <title>Uri: 'https://reqres.in/api/users?page=2'</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start="1663100264158" stop="1663100265183" status="passed">
+                    <name>When I send a GET request</name>
+                    <title>When I send a GET request</title>
+                    <attachments>
+                        <attachment title="Actual Response :" source="4e782287-c204-48e6-ac45-a7712136c02e-attachment" type="text/json"/>
+                    </attachments>
+                    <steps>
+                        <step start="1663100265148" stop="1663100265148" status="passed">
+                            <name>Response Status: 200</name>
+                            <title>Response Status: 200</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                        <step start="1663100265148" stop="1663100265148" status="passed">
+                            <name>Response Line: HTTP/1.1 200 OK</name>
+                            <title>Response Line: HTTP/1.1 200 OK</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                        <step start="1663100265148" stop="1663100265148" status="passed">
+                            <name>Response Time(milliseconds): 512</name>
+                            <title>Response Time(milliseconds): 512</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start="1663100265183" stop="1663100265183" status="passed">
+                    <name>Then I validate the response with '200'</name>
+                    <title>Then I validate the response with '200'</title>
+                    <attachments/>
+                    <steps>
+                        <step start="1663100265183" stop="1663100265183" status="passed">
+                            <name>Matched Field: StatusCode: Expected=200, Actual= 200 are EQUAL.</name>
+                            <title>Matched Field: StatusCode: Expected=200, Actual= 200 are EQUAL.</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1663100265199" stop="1663100265453" status="passed">
+            <name>API - POST Test</name>
+            <title>API - POST Test</title>
+            <description type="text">POST Test</description>
+            <steps>
+                <step start="1663100265199" stop="1663100265199" status="passed">
+                    <name>Given Generate the POST uri and payload for 'reqresapi.uri' endpoint</name>
+                    <title>Given Generate the POST uri and payload for 'reqresapi.uri' endpoint</title>
+                    <attachments>
+                        <attachment title="Headers" source="5744fd3b-5c5b-439c-ad41-8e8641d47dee-attachment.txt" type="text/plain"/>
+                        <attachment title="Request Body:" source="0346a1df-d41f-495c-97dc-4671c7416578-attachment.txt" type="text/plain"/>
+                    </attachments>
+                    <steps>
+                        <step start="1663100265199" stop="1663100265199" status="passed">
+                            <name>Uri: 'https://reqres.in/api/users'</name>
+                            <title>Uri: 'https://reqres.in/api/users'</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start="1663100265199" stop="1663100265438" status="passed">
+                    <name>When I send a POST request</name>
+                    <title>When I send a POST request</title>
+                    <attachments>
+                        <attachment title="Request Body :" source="d1217a20-1cb6-4c54-b20f-7a8c1e649cb6-attachment" type="text/json"/>
+                        <attachment title="Actual Response :" source="d1dfa329-441b-4fd1-ba8a-e68d4aefc59d-attachment" type="text/json"/>
+                    </attachments>
+                    <steps>
+                        <step start="1663100265438" stop="1663100265438" status="passed">
+                            <name>Response Status: 201</name>
+                            <title>Response Status: 201</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                        <step start="1663100265438" stop="1663100265438" status="passed">
+                            <name>Response Line: HTTP/1.1 201 Created</name>
+                            <title>Response Line: HTTP/1.1 201 Created</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                        <step start="1663100265438" stop="1663100265438" status="passed">
+                            <name>Response Time(milliseconds): 239</name>
+                            <title>Response Time(milliseconds): 239</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start="1663100265438" stop="1663100265438" status="passed">
+                    <name>Then I validate the response with '201'</name>
+                    <title>Then I validate the response with '201'</title>
+                    <attachments/>
+                    <steps>
+                        <step start="1663100265438" stop="1663100265438" status="passed">
+                            <name>Matched Field: StatusCode: Expected=201, Actual= 201 are EQUAL.</name>
+                            <title>Matched Field: StatusCode: Expected=201, Actual= 201 are EQUAL.</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1663100265453" stop="1663100265673" status="passed">
+            <name>API - PUT Test</name>
+            <title>API - PUT Test</title>
+            <description type="text">PUT Test</description>
+            <steps>
+                <step start="1663100265453" stop="1663100265453" status="passed">
+                    <name>Given Generate the PUT uri and payload for 'reqresapi.uri' endpoint</name>
+                    <title>Given Generate the PUT uri and payload for 'reqresapi.uri' endpoint</title>
+                    <attachments>
+                        <attachment title="Headers" source="ba103cf7-6873-47ad-b75f-f6bdc582df12-attachment.txt" type="text/plain"/>
+                        <attachment title="Request Body:" source="bf179b4b-5f84-4623-990a-4500120152fd-attachment.txt" type="text/plain"/>
+                    </attachments>
+                    <steps>
+                        <step start="1663100265453" stop="1663100265453" status="passed">
+                            <name>Uri: 'https://reqres.in/api/users/2'</name>
+                            <title>Uri: 'https://reqres.in/api/users/2'</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start="1663100265453" stop="1663100265658" status="passed">
+                    <name>When I send a PUT request</name>
+                    <title>When I send a PUT request</title>
+                    <attachments>
+                        <attachment title="Request Body :" source="a2bd0745-b92f-482a-af38-cc35701eaa32-attachment" type="text/json"/>
+                        <attachment title="Actual Response :" source="db1cd6f1-79b5-498c-81bd-edb77c2fe456-attachment" type="text/json"/>
+                    </attachments>
+                    <steps>
+                        <step start="1663100265658" stop="1663100265658" status="passed">
+                            <name>Response Status: 200</name>
+                            <title>Response Status: 200</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                        <step start="1663100265658" stop="1663100265658" status="passed">
+                            <name>Response Line: HTTP/1.1 200 OK</name>
+                            <title>Response Line: HTTP/1.1 200 OK</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                        <step start="1663100265658" stop="1663100265658" status="passed">
+                            <name>Response Time(milliseconds): 205</name>
+                            <title>Response Time(milliseconds): 205</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start="1663100265673" stop="1663100265673" status="passed">
+                    <name>Then I validate the response with '200'</name>
+                    <title>Then I validate the response with '200'</title>
+                    <attachments/>
+                    <steps>
+                        <step start="1663100265673" stop="1663100265673" status="passed">
+                            <name>Matched Field: StatusCode: Expected=200, Actual= 200 are EQUAL.</name>
+                            <title>Matched Field: StatusCode: Expected=200, Actual= 200 are EQUAL.</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1663100265675" stop="1663100265900" status="passed">
+            <name>API - PATCH Test</name>
+            <title>API - PATCH Test</title>
+            <description type="text">PATCH Test</description>
+            <steps>
+                <step start="1663100265675" stop="1663100265675" status="passed">
+                    <name>Given Generate the PATCH uri and payload for 'reqresapi.uri' endpoint</name>
+                    <title>Given Generate the PATCH uri and payload for 'reqresapi.uri' endpoint</title>
+                    <attachments>
+                        <attachment title="Headers" source="f1205e82-1459-4526-8d86-ac047b72a546-attachment.txt" type="text/plain"/>
+                        <attachment title="Request Body:" source="09731fbd-8b5f-4bb6-be90-d36ea959a9d6-attachment.txt" type="text/plain"/>
+                    </attachments>
+                    <steps>
+                        <step start="1663100265675" stop="1663100265675" status="passed">
+                            <name>Uri: 'https://reqres.in/api/users/2'</name>
+                            <title>Uri: 'https://reqres.in/api/users/2'</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start="1663100265675" stop="1663100265900" status="passed">
+                    <name>When I send a PATCH request</name>
+                    <title>When I send a PATCH request</title>
+                    <attachments>
+                        <attachment title="Request Body :" source="15f75f5e-fc63-47fb-9f00-99e5c4242316-attachment" type="text/json"/>
+                        <attachment title="Actual Response :" source="84876cb7-db29-473a-ab81-d912e6bdff9c-attachment" type="text/json"/>
+                    </attachments>
+                    <steps>
+                        <step start="1663100265900" stop="1663100265900" status="passed">
+                            <name>Response Status: 200</name>
+                            <title>Response Status: 200</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                        <step start="1663100265900" stop="1663100265900" status="passed">
+                            <name>Response Line: HTTP/1.1 200 OK</name>
+                            <title>Response Line: HTTP/1.1 200 OK</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                        <step start="1663100265900" stop="1663100265900" status="passed">
+                            <name>Response Time(milliseconds): 225</name>
+                            <title>Response Time(milliseconds): 225</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start="1663100265900" stop="1663100265900" status="passed">
+                    <name>Then I validate the response with '200'</name>
+                    <title>Then I validate the response with '200'</title>
+                    <attachments/>
+                    <steps>
+                        <step start="1663100265900" stop="1663100265900" status="passed">
+                            <name>Matched Field: StatusCode: Expected=200, Actual= 200 are EQUAL.</name>
+                            <title>Matched Field: StatusCode: Expected=200, Actual= 200 are EQUAL.</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1663100265900" stop="1663100266104" status="passed">
+            <name>API - DELETE Test</name>
+            <title>API - DELETE Test</title>
+            <description type="text">DELETE Test</description>
+            <steps>
+                <step start="1663100265900" stop="1663100265900" status="passed">
+                    <name>Given Generate the DELETE uri and parameters for 'reqresapi.uri' endpoint</name>
+                    <title>Given Generate the DELETE uri and parameters for 'reqresapi.uri' endpoint</title>
+                    <attachments>
+                        <attachment title="Headers" source="4c3140ca-030a-473b-9247-61edccfb6774-attachment.txt" type="text/plain"/>
+                    </attachments>
+                    <steps>
+                        <step start="1663100265900" stop="1663100265900" status="passed">
+                            <name>Uri: 'https://reqres.in/api/users?page=2'</name>
+                            <title>Uri: 'https://reqres.in/api/users?page=2'</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start="1663100265900" stop="1663100266104" status="passed">
+                    <name>When I send a DELETE request</name>
+                    <title>When I send a DELETE request</title>
+                    <attachments>
+                        <attachment title="Actual Response :" source="509e274b-aad5-44b2-8b12-b7f70630fb56-attachment.txt" type="text/plain"/>
+                    </attachments>
+                    <steps>
+                        <step start="1663100266104" stop="1663100266104" status="passed">
+                            <name>Response Status: 204</name>
+                            <title>Response Status: 204</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                        <step start="1663100266104" stop="1663100266104" status="passed">
+                            <name>Response Line: HTTP/1.1 204 No Content</name>
+                            <title>Response Line: HTTP/1.1 204 No Content</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                        <step start="1663100266104" stop="1663100266104" status="passed">
+                            <name>Response Time(milliseconds): 204</name>
+                            <title>Response Time(milliseconds): 204</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start="1663100266104" stop="1663100266104" status="passed">
+                    <name>Then I validate the response with '204'</name>
+                    <title>Then I validate the response with '204'</title>
+                    <attachments/>
+                    <steps>
+                        <step start="1663100266104" stop="1663100266104" status="passed">
+                            <name>Matched Field: StatusCode: Expected=204, Actual= 204 are EQUAL.</name>
+                            <title>Matched Field: StatusCode: Expected=204, Actual= 204 are EQUAL.</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <labels/>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="JBehave"/>
+        <label name="feature" value="features"/>
+        <label name="story" value="common"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

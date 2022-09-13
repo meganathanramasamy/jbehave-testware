@@ -1,0 +1,20 @@
+{
+  "Jira": [
+    {
+      "TESTCASE_NAME": "Testcase01",
+      "PROJECT_NAME": "Project1",
+      "CYCLE_NAME": "Test Cycle 1",
+      "FOLDER_NAME": "Build 1",
+      "VERSION": "version1",
+      "TESTCASE_KEY": "Project1-1"
+    },
+    {
+      "TESTCASE_NAME": "Testcase02",
+      "PROJECT_NAME": "Project1",
+      "CYCLE_NAME": "Test Cycle 1",
+      "FOLDER_NAME": "Build 1",
+      "VERSION": "version1",
+      "TESTCASE_KEY": "Project1-2"
+    }
+  ]
+}

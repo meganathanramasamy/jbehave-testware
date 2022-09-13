@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1663100276984" stop="1663100276984" version="1.5.4" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>AfterStories</name>
+    <title>AfterStories</title>
+    <labels>
+        <label name="framework" value="JBehave"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

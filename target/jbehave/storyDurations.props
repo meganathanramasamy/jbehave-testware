@@ -1,0 +1,8 @@
+#org.jbehave.core.embedder.StoryManager
+#Tue Sep 13 21:17:56 BST 2022
+features/common/api.story=1000
+threads=1
+total=11000
+threadAverage=11000
+features/common/ui.story=10000
+features/common/common.story=0

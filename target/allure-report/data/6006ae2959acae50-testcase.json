@@ -1,0 +1,182 @@
+{
+  "uid" : "6006ae2959acae50",
+  "name" : "API - DELETE Test",
+  "title" : "API - DELETE Test",
+  "time" : {
+    "start" : 1663100265900,
+    "stop" : 1663100266104,
+    "duration" : 204
+  },
+  "summary" : {
+    "attachments" : 2,
+    "steps" : 8
+  },
+  "failure" : null,
+  "description" : {
+    "value" : "DELETE Test",
+    "type" : "TEXT"
+  },
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "suite" : {
+    "uid" : "4a6cfdcaa2e62933",
+    "name" : "api.story",
+    "title" : "api.story"
+  },
+  "steps" : [ {
+    "name" : "Given Generate the DELETE uri and parameters for 'reqresapi.uri' endpoint",
+    "title" : "Given Generate the DELETE uri and parameters for 'reqresapi.uri' endpoint",
+    "time" : {
+      "start" : 1663100265900,
+      "stop" : 1663100265900,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 1,
+      "steps" : 1
+    },
+    "status" : "PASSED",
+    "attachments" : [ {
+      "title" : "Headers",
+      "source" : "4c3140ca-030a-473b-9247-61edccfb6774-attachment.txt",
+      "type" : "text/plain",
+      "size" : 2,
+      "uid" : "9dd10aaf398b2498"
+    } ],
+    "steps" : [ {
+      "name" : "Uri: 'https://reqres.in/api/users?page=2'",
+      "title" : "Uri: 'https://reqres.in/api/users?page=2'",
+      "time" : {
+        "start" : 1663100265900,
+        "stop" : 1663100265900,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    } ]
+  }, {
+    "name" : "When I send a DELETE request",
+    "title" : "When I send a DELETE request",
+    "time" : {
+      "start" : 1663100265900,
+      "stop" : 1663100266104,
+      "duration" : 204
+    },
+    "summary" : {
+      "attachments" : 1,
+      "steps" : 3
+    },
+    "status" : "PASSED",
+    "attachments" : [ {
+      "title" : "Actual Response :",
+      "source" : "509e274b-aad5-44b2-8b12-b7f70630fb56-attachment.txt",
+      "type" : "text/plain",
+      "size" : 0,
+      "uid" : "52e5f52462ce7b9e"
+    } ],
+    "steps" : [ {
+      "name" : "Response Status: 204",
+      "title" : "Response Status: 204",
+      "time" : {
+        "start" : 1663100266104,
+        "stop" : 1663100266104,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    }, {
+      "name" : "Response Line: HTTP/1.1 204 No Content",
+      "title" : "Response Line: HTTP/1.1 204 No Content",
+      "time" : {
+        "start" : 1663100266104,
+        "stop" : 1663100266104,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    }, {
+      "name" : "Response Time(milliseconds): 204",
+      "title" : "Response Time(milliseconds): 204",
+      "time" : {
+        "start" : 1663100266104,
+        "stop" : 1663100266104,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    } ]
+  }, {
+    "name" : "Then I validate the response with '204'",
+    "title" : "Then I validate the response with '204'",
+    "time" : {
+      "start" : 1663100266104,
+      "stop" : 1663100266104,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 1
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ {
+      "name" : "Matched Field: StatusCode: Expected=204, Actual= 204 are EQUAL.",
+      "title" : "Matched Field: StatusCode: Expected=204, Actual= 204 are EQUAL.",
+      "time" : {
+        "start" : 1663100266104,
+        "stop" : 1663100266104,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    } ]
+  } ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "testIds" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "framework",
+    "value" : "JBehave"
+  }, {
+    "name" : "suite-title",
+    "value" : "api.story"
+  }, {
+    "name" : "story",
+    "value" : "common"
+  }, {
+    "name" : "feature",
+    "value" : "features"
+  }, {
+    "name" : "suite-name",
+    "value" : "api.story"
+  } ],
+  "parameters" : [ ]
+}

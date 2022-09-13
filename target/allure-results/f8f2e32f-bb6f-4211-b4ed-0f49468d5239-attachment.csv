@@ -1,0 +1,8 @@
+Story                             	,TestCase                      	,Meta             	,
+"..\features\common\api.story"    	,"Scenario: API - GET Test"    	,"@api1"          	,
+"..\features\common\api.story"    	,"Scenario: API - POST Test"   	,"@api2"          	,
+"..\features\common\api.story"    	,"Scenario: API - PUT Test"    	,"@api3"          	,
+"..\features\common\api.story"    	,"Scenario: API - PATCH Test"  	,"@api4"          	,
+"..\features\common\api.story"    	,"Scenario: API - DELETE Test" 	,"@api5"          	,
+"..\features\common\common.story" 	,"Scenario: Test Cases List"   	,"@testcaseslist" 	,
+"..\features\common\ui.story"     	,"Scenario: Login Test"        	,"@testlogin"     	,

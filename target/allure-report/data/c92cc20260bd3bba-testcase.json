@@ -1,0 +1,86 @@
+{
+  "uid" : "c92cc20260bd3bba",
+  "name" : "Test Cases List",
+  "title" : "Test Cases List",
+  "time" : {
+    "start" : 1663100266135,
+    "stop" : 1663100266135,
+    "duration" : 0
+  },
+  "summary" : {
+    "attachments" : 1,
+    "steps" : 2
+  },
+  "failure" : null,
+  "description" : {
+    "value" : "",
+    "type" : "TEXT"
+  },
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "suite" : {
+    "uid" : "7bda275ee150e2c9",
+    "name" : "common.story",
+    "title" : "common.story"
+  },
+  "steps" : [ {
+    "name" : "Given Read the Test case Names:",
+    "title" : "Given Read the Test case Names:",
+    "time" : {
+      "start" : 1663100266135,
+      "stop" : 1663100266135,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 1,
+      "steps" : 1
+    },
+    "status" : "PASSED",
+    "attachments" : [ {
+      "title" : "Testcase List",
+      "source" : "f8f2e32f-bb6f-4211-b4ed-0f49468d5239-attachment.csv",
+      "type" : "text/csv",
+      "size" : 704,
+      "uid" : "4e2c185ab3bbe7e9"
+    } ],
+    "steps" : [ {
+      "name" : "pool-1-thread-1",
+      "title" : "pool-1-thread-1",
+      "time" : {
+        "start" : 1663100266135,
+        "stop" : 1663100266135,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    } ]
+  } ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "testIds" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "framework",
+    "value" : "JBehave"
+  }, {
+    "name" : "suite-name",
+    "value" : "common.story"
+  }, {
+    "name" : "story",
+    "value" : "common"
+  }, {
+    "name" : "suite-title",
+    "value" : "common.story"
+  }, {
+    "name" : "feature",
+    "value" : "features"
+  } ],
+  "parameters" : [ ]
+}

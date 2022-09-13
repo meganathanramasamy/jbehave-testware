@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1663100266166" stop="1663100276812" version="1.5.4" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>ui.story</name>
+    <title>ui.story</title>
+    <test-cases>
+        <test-case start="1663100266166" stop="1663100276812" status="passed">
+            <name>Login Test</name>
+            <title>Login Test</title>
+            <description type="text">Login &amp; Logout</description>
+            <steps>
+                <step start="1663100266166" stop="1663100273150" status="passed">
+                    <name>Given Open the Login Page</name>
+                    <title>Given Open the Login Page</title>
+                    <attachments>
+                        <attachment title="After Open at 2022.09.13.21.17.53" source="24edd338-1bb2-478b-9372-28d5a9bbbdec-attachment.png" type="Image/png"/>
+                    </attachments>
+                    <steps>
+                        <step start="1663100267848" stop="1663100267848" status="passed">
+                            <name>Web Page URL</name>
+                            <title>Web Page URL</title>
+                            <attachments/>
+                            <steps>
+                                <step start="1663100267848" stop="1663100267848" status="passed">
+                                    <name>https://www.saucedemo.com/</name>
+                                    <title>https://www.saucedemo.com/</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                            </steps>
+                        </step>
+                    </steps>
+                </step>
+                <step start="1663100273150" stop="1663100274434" status="passed">
+                    <name>When User fill details and click Login</name>
+                    <title>When User fill details and click Login</title>
+                    <attachments>
+                        <attachment title="Before clicking on Login at 2022.09.13.21.17.53" source="fd86e498-3416-4066-b22b-fc473569694c-attachment.png" type="Image/png"/>
+                        <attachment title="After clicking on Login at 2022.09.13.21.17.54" source="cbda65d0-2518-401a-8d60-2c360a15df92-attachment.png" type="Image/png"/>
+                    </attachments>
+                    <steps>
+                        <step start="1663100273150" stop="1663100273150" status="passed">
+                            <name>Thread Name: pool-1-thread-1</name>
+                            <title>Thread Name: pool-1-thread-1</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                        <step start="1663100273150" stop="1663100273150" status="passed">
+                            <name>Available Login User:standard_user</name>
+                            <title>Available Login User:standard_user</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start="1663100274434" stop="1663100275079" status="passed">
+                    <name>Then Verify Login is success</name>
+                    <title>Then Verify Login is success</title>
+                    <attachments>
+                        <attachment title="Login Success at 2022.09.13.21.17.55" source="4315c4d4-c94d-419b-adff-f55b3a28108d-attachment.png" type="Image/png"/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start="1663100275079" stop="1663100275802" status="passed">
+                    <name>And Log out of application</name>
+                    <title>And Log out of application</title>
+                    <attachments>
+                        <attachment title="Logged out of application at 2022.09.13.21.17.55" source="d71f03bc-f49d-4f4f-ac28-600da343d808-attachment.png" type="Image/png"/>
+                    </attachments>
+                    <steps>
+                        <step start="1663100275802" stop="1663100275802" status="passed">
+                            <name>Releasing User(env.loginUser1): standard_user</name>
+                            <title>Releasing User(env.loginUser1): standard_user</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <labels/>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="JBehave"/>
+        <label name="feature" value="features"/>
+        <label name="story" value="common"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

@@ -1,0 +1,26 @@
+<configuration debug="false">
+
+    <logger name="org.apache.commons.httpclient">
+        <level value="fatal"/>
+    </logger>
+
+    <logger name="httpclient.wire.header">
+        <level value="fatal"/>
+    </logger>
+
+    <logger name="httpclient.wire.content">
+        <level value="fatal"/>
+    </logger>
+
+    <!-- definition of appender STDOUT -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="ERROR">
+        <!-- appender referenced after it is defined -->
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

@@ -1,0 +1,215 @@
+{
+  "uid" : "8dd4ac8a891c4543",
+  "name" : "Login Test",
+  "title" : "Login Test",
+  "time" : {
+    "start" : 1663100266166,
+    "stop" : 1663100276812,
+    "duration" : 10646
+  },
+  "summary" : {
+    "attachments" : 5,
+    "steps" : 9
+  },
+  "failure" : null,
+  "description" : {
+    "value" : "Login & Logout",
+    "type" : "TEXT"
+  },
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "suite" : {
+    "uid" : "8ca51ecba4a91cca",
+    "name" : "ui.story",
+    "title" : "ui.story"
+  },
+  "steps" : [ {
+    "name" : "Given Open the Login Page",
+    "title" : "Given Open the Login Page",
+    "time" : {
+      "start" : 1663100266166,
+      "stop" : 1663100273150,
+      "duration" : 6984
+    },
+    "summary" : {
+      "attachments" : 1,
+      "steps" : 2
+    },
+    "status" : "PASSED",
+    "attachments" : [ {
+      "title" : "After Open at 2022.09.13.21.17.53",
+      "source" : "24edd338-1bb2-478b-9372-28d5a9bbbdec-attachment.png",
+      "type" : "Image/png",
+      "size" : 176822,
+      "uid" : "8fa6f57e73ae5e9"
+    } ],
+    "steps" : [ {
+      "name" : "Web Page URL",
+      "title" : "Web Page URL",
+      "time" : {
+        "start" : 1663100267848,
+        "stop" : 1663100267848,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 1
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ {
+        "name" : "https://www.saucedemo.com/",
+        "title" : "https://www.saucedemo.com/",
+        "time" : {
+          "start" : 1663100267848,
+          "stop" : 1663100267848,
+          "duration" : 0
+        },
+        "summary" : {
+          "attachments" : 0,
+          "steps" : 0
+        },
+        "status" : "PASSED",
+        "attachments" : [ ],
+        "steps" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "When User fill details and click Login",
+    "title" : "When User fill details and click Login",
+    "time" : {
+      "start" : 1663100273150,
+      "stop" : 1663100274434,
+      "duration" : 1284
+    },
+    "summary" : {
+      "attachments" : 2,
+      "steps" : 2
+    },
+    "status" : "PASSED",
+    "attachments" : [ {
+      "title" : "Before clicking on Login at 2022.09.13.21.17.53",
+      "source" : "fd86e498-3416-4066-b22b-fc473569694c-attachment.png",
+      "type" : "Image/png",
+      "size" : 176581,
+      "uid" : "cb71086be122fbec"
+    }, {
+      "title" : "After clicking on Login at 2022.09.13.21.17.54",
+      "source" : "cbda65d0-2518-401a-8d60-2c360a15df92-attachment.png",
+      "type" : "Image/png",
+      "size" : 1865518,
+      "uid" : "5fa55d14be38c780"
+    } ],
+    "steps" : [ {
+      "name" : "Thread Name: pool-1-thread-1",
+      "title" : "Thread Name: pool-1-thread-1",
+      "time" : {
+        "start" : 1663100273150,
+        "stop" : 1663100273150,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    }, {
+      "name" : "Available Login User:standard_user",
+      "title" : "Available Login User:standard_user",
+      "time" : {
+        "start" : 1663100273150,
+        "stop" : 1663100273150,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    } ]
+  }, {
+    "name" : "Then Verify Login is success",
+    "title" : "Then Verify Login is success",
+    "time" : {
+      "start" : 1663100274434,
+      "stop" : 1663100275079,
+      "duration" : 645
+    },
+    "summary" : {
+      "attachments" : 1,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ {
+      "title" : "Login Success at 2022.09.13.21.17.55",
+      "source" : "4315c4d4-c94d-419b-adff-f55b3a28108d-attachment.png",
+      "type" : "Image/png",
+      "size" : 1865518,
+      "uid" : "72471a4029fea9d6"
+    } ],
+    "steps" : [ ]
+  }, {
+    "name" : "And Log out of application",
+    "title" : "And Log out of application",
+    "time" : {
+      "start" : 1663100275079,
+      "stop" : 1663100275802,
+      "duration" : 723
+    },
+    "summary" : {
+      "attachments" : 1,
+      "steps" : 1
+    },
+    "status" : "PASSED",
+    "attachments" : [ {
+      "title" : "Logged out of application at 2022.09.13.21.17.55",
+      "source" : "d71f03bc-f49d-4f4f-ac28-600da343d808-attachment.png",
+      "type" : "Image/png",
+      "size" : 176822,
+      "uid" : "8a35df1511ec0b4a"
+    } ],
+    "steps" : [ {
+      "name" : "Releasing User(env.loginUser1): standard_user",
+      "title" : "Releasing User(env.loginUser1): standard_user",
+      "time" : {
+        "start" : 1663100275802,
+        "stop" : 1663100275802,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    } ]
+  } ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "testIds" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "framework",
+    "value" : "JBehave"
+  }, {
+    "name" : "suite-title",
+    "value" : "ui.story"
+  }, {
+    "name" : "story",
+    "value" : "common"
+  }, {
+    "name" : "suite-name",
+    "value" : "ui.story"
+  }, {
+    "name" : "feature",
+    "value" : "features"
+  } ],
+  "parameters" : [ ]
+}
