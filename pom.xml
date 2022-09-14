@@ -99,7 +99,7 @@
 			<version>2.6</version>
 		</dependency>
 
-		<!-- Spring -> used mainly for IoC -->
+		<!--&lt;!&ndash; Spring -> used mainly for IoC &ndash;&gt;
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -125,7 +125,7 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
 			<version>4.1.8.RELEASE</version>
-		</dependency>
+		</dependency>-->
 
 		<!-- Hamcrest -> used for asserts -->
 		<dependency>
