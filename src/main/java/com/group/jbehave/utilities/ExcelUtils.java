@@ -2,7 +2,8 @@ package com.group.jbehave.utilities;
 
 import com.group.bdd.framework.LogUtil;
 import org.apache.commons.collections4.list.TreeList;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -16,7 +17,7 @@ import static com.group.bdd.framework.Asserts.assertThat;
 
 public class ExcelUtils {
 
-    final static Logger LOG = Logger.getLogger(ExcelUtils.class);
+    private static final Logger LOG = LogManager.getLogger(ExcelUtils.class);
 
     private static final String COL_DELIM = "|";
     private static final String CSV_COL_DELIM = "\t,";

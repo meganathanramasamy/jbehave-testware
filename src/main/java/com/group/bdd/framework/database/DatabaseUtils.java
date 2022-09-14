@@ -3,7 +3,8 @@ package com.group.bdd.framework.database;
 import com.group.bdd.framework.DBUtils;
 import com.group.bdd.framework.LogUtil;
 import com.group.bdd.framework.DbActions;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
 import java.util.List;
@@ -13,7 +14,7 @@ import static com.group.bdd.framework.ConfigLoader.config;
 import static java.lang.String.format;
 
 public class DatabaseUtils {
-	final static Logger LOG = Logger.getLogger(DatabaseUtils.class);
+	private static final Logger LOG = LogManager.getLogger(DatabaseUtils.class);
 
 	private static final String CONNECTION_STRING_TEMPLATE = "jdbc:oracle:thin:@%s:1521:%s";
 

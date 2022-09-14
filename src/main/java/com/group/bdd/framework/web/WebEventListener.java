@@ -1,13 +1,14 @@
 package com.group.bdd.framework.web;
 
 import com.group.bdd.framework.LogUtil;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
 
 class WebEventListener extends AbstractWebDriverEventListener {
-    final static Logger LOG = Logger.getLogger(WebEventListener.class);
+    private static final Logger LOG = LogManager.getLogger(WebEventListener.class);
 
     public void beforeNavigateTo(String url, WebDriver driver) {
         LOG.info("Before navigating to: '" + url + "'");

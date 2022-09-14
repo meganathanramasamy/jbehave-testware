@@ -3,7 +3,8 @@ package com.group.jbehave.utilities;
 import com.group.bdd.framework.LogUtil;
 import oracle.sql.CLOB;
 import org.apache.commons.io.IOUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jbehave.core.model.ExamplesTable;
 
 import java.io.*;
@@ -26,7 +27,7 @@ import static com.group.bdd.framework.DBUtils.getDBTableReportFormatCol;
 
 public class Util extends Thread {
 
-    final static Logger LOG = Logger.getLogger(Util.class);
+    private static final Logger LOG = LogManager.getLogger(Util.class);
 
     public static String findAndReplaceText(String textMessage, Map<String, String> dataValues) {
         for (Map.Entry m : dataValues.entrySet()) {

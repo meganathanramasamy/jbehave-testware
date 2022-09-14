@@ -1,13 +1,14 @@
 package com.group.bdd.framework.rest;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.net.URI;
 
 public class RestActions {
     public static final String BASE_URI_PARAM = "rest.base.uri";
 
-    final static Logger LOG = Logger.getLogger(RestActions.class);
+    private static final Logger LOG = LogManager.getLogger(RestActions.class);
 
     public RestActions() {
     }

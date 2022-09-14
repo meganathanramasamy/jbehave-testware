@@ -8,7 +8,8 @@ import java.util.regex.Pattern;
 
 import com.group.bdd.framework.LogUtil;
 import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.w3c.dom.*;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -35,7 +36,7 @@ import static com.group.bdd.framework.Asserts.assertThat;
 
 public class XmlUtils {
 
-    final static Logger LOG = Logger.getLogger(XmlUtils.class);
+    private static final Logger LOG = LogManager.getLogger(XmlUtils.class);
 
     public static final ThreadLocal<Map<String, String>> currentXLRow = new ThreadLocal<>();
     private static final String COL_DELIM = ",";

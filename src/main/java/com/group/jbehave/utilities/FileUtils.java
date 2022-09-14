@@ -1,7 +1,8 @@
 package com.group.jbehave.utilities;
 
 import com.group.bdd.framework.LogUtil;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -18,7 +19,7 @@ import java.util.zip.ZipOutputStream;
 import static com.group.bdd.framework.Asserts.assertThat;
 
 public class FileUtils {
-    final static Logger LOG = Logger.getLogger(FileUtils.class);
+    private static final Logger LOG = LogManager.getLogger(FileUtils.class);
 
     public String readTheFile(String fileName, String extenstion) {
         String generateXML = "";

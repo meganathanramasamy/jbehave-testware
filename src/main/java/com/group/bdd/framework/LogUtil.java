@@ -5,7 +5,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.apache.commons.io.FileUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import org.w3c.dom.Node;
 import org.w3c.dom.bootstrap.DOMImplementationRegistry;
@@ -39,7 +40,7 @@ import java.util.Date;
 
 public final class LogUtil {
     public static boolean isnestedLog = false;
-    private static final Logger LOG = Logger.getLogger(LogUtil.class);
+    private static final Logger LOG = LogManager.getLogger(LogUtil.class);
 
     private LogUtil() {
     }

@@ -4,7 +4,8 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.thoughtworks.paranamer.NullParanamer;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jbehave.core.ConfigurableEmbedder;
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.embedder.Embedder;
@@ -35,7 +36,7 @@ public class SequenceBddRunner extends ConfigurableEmbedder {
 
 	private Configuration configuration;
     static String packageName = ConfigLoader.config().getString("bdd.steps.package");
-    final static Logger LOG = Logger.getLogger(SequenceBddRunner.class);
+    private static final Logger LOG = LogManager.getLogger(SequenceBddRunner.class);
 
     public SequenceBddRunner() {
         super();

@@ -5,7 +5,8 @@ import com.google.common.base.Joiner;
 import com.google.common.base.Throwables;
 import com.google.common.collect.Lists;
 import org.apache.commons.dbutils.BasicRowProcessor;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.Map;
 
 public class DbActions {
 
-	final static Logger LOG = Logger.getLogger(DbActions.class);
+	private static final Logger LOG = LogManager.getLogger(DbActions.class);
 	public static class QueryExecutor {
 		private final String hostname;
 		private final String user;

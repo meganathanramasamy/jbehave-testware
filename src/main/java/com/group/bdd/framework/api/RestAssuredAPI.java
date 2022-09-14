@@ -7,7 +7,8 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.apache.http.conn.ssl.SSLSocketFactory;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.FileInputStream;
 import java.security.KeyStore;
@@ -19,7 +20,7 @@ import static io.restassured.RestAssured.given;
 
 public class RestAssuredAPI {
 
-    final static Logger LOG = Logger.getLogger(RestAssuredAPI.class);
+    private static final Logger LOG = LogManager.getLogger(RestAssuredAPI.class);
 
     ThreadLocal<RequestSpecification> request = new ThreadLocal<>();
 

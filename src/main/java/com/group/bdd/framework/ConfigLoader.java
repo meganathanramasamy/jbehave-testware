@@ -14,7 +14,8 @@ import org.apache.commons.configuration.event.ConfigurationListener;
 import org.apache.commons.configuration.event.EventSource;
 
 import com.google.common.io.Resources;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class ConfigLoader {
 
@@ -24,7 +25,7 @@ public class ConfigLoader {
 		return getConfig();
 	}
 
-	final static Logger LOG = Logger.getLogger(ConfigLoader.class);
+	private static final Logger LOG = LogManager.getLogger(ConfigLoader.class);
 
 	private static Configuration getConfig(){
 		if (config == null){

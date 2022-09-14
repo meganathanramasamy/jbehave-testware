@@ -4,7 +4,8 @@ import com.github.valfirst.jbehave.junit.monitoring.JUnitReportingRunner;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.embedder.Embedder;
 import org.jbehave.core.embedder.EmbedderControls;
@@ -43,7 +44,7 @@ public abstract class BddRunner extends JUnitStories {
     
     private int threads = Integer.parseInt(ConfigLoader.config().getString("bdd.thread"));
 
-	final static Logger LOG = Logger.getLogger(BddRunner.class);
+	private static final Logger LOG = LogManager.getLogger(BddRunner.class);
 	
 	@AfterClass
 	public static void cleanUp(){

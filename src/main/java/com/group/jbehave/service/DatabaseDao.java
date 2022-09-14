@@ -12,11 +12,12 @@ import java.util.Map;
 import com.group.bdd.framework.DbActions;
 import com.group.bdd.framework.LogUtil;
 import com.group.jbehave.utilities.ExcelUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class DatabaseDao {
 
-    final static Logger LOG = Logger.getLogger(DatabaseDao.class);
+    private static final Logger LOG = LogManager.getLogger(DatabaseDao.class);
 
     private static String environment = config().getString("test.environment");
     private static final String CONNECTION_STRING_TEMPLATE = "jdbc:oracle:thin:%s/%s@%s:%s:%s";

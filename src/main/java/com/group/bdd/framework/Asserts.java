@@ -3,7 +3,8 @@ package com.group.bdd.framework;
 import com.google.common.base.Joiner;
 import com.google.common.base.Throwables;
 import com.google.common.collect.Lists;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.StringDescription;
@@ -17,7 +18,7 @@ public class Asserts {
     private static AllureReporter allureReporter = new AllureReporter();
 	private static Thread hook = null;
 
-	final static Logger LOG = Logger.getLogger(Asserts.class);
+	private static final Logger LOG = LogManager.getLogger(Asserts.class);
 	private synchronized static void addError(AssertionError e){
 		LOG.error("Error in test ",e);
 		errors.add(e);

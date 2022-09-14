@@ -16,7 +16,8 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jbehave.core.model.*;
 import org.jbehave.core.reporters.StoryReporter;
 import ru.yandex.qatools.allure.Allure;
@@ -40,7 +41,7 @@ import java.util.*;
 
 public class AllureReporter implements StoryReporter {
 
-    final static Logger LOG = Logger.getLogger(AllureReporter.class);
+    private static final Logger LOG = LogManager.getLogger(AllureReporter.class);
 
     private JiraZephyrTestCaseManagement jiraClient = new JiraZephyrTestCaseManagement();
 	

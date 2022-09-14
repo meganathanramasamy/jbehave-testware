@@ -3,7 +3,8 @@ package com.group.jbehave.utilities;
 import com.group.bdd.framework.LogUtil;
 import com.group.bdd.framework.web.BrowserDriver;
 import com.group.jbehave.steps.UiSteps;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
@@ -15,7 +16,7 @@ import static com.group.bdd.framework.Asserts.assertThat;
 
 public class WebUtils {
 
-    final static Logger LOG = Logger.getLogger(WebUtils.class);
+    private static final Logger LOG = LogManager.getLogger(WebUtils.class);
 
     private void scrolltoElementJavaScript(WebElement element) {
         ((JavascriptExecutor) BrowserDriver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);

@@ -17,11 +17,12 @@ import java.util.concurrent.TimeUnit;
 import static com.group.bdd.framework.Asserts.assertThat;
 import static com.group.bdd.framework.ConfigLoader.config;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class IbmMqService {
 
-    final static Logger LOG = Logger.getLogger(IbmMqService.class);
+    private static final Logger LOG = LogManager.getLogger(IbmMqService.class);
 
     private static String env = config().getString("test.environment");
     public static final String HEX_CHARS = "0123456789ABCDEF";

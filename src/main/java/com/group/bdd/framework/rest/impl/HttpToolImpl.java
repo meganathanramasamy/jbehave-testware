@@ -16,7 +16,8 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.DefaultRedirectStrategy;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.cookie.BasicClientCookie;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -39,7 +40,7 @@ public class HttpToolImpl implements HttpTool {
     static final String CONTENT_TYPE = "Content-Type";
     private ResponseHandler responseHandler;
 
-    final static Logger LOG = Logger.getLogger(HttpToolImpl.class);
+    private static final Logger LOG = LogManager.getLogger(HttpToolImpl.class);
 
     public HttpToolImpl(URI restHost,String KeyStorePath,String KeyStorePassword, int defaultTimeout) {
         this.restHost = restHost;
