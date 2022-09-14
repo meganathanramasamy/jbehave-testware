@@ -2,6 +2,7 @@ package com.group.bdd.framework.jira;
 
 import org.apache.commons.collections4.list.TreeList;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -116,7 +117,8 @@ public class JiraUtil {
                     String key = sheet.getRow(0).getCell(col).toString();
                     try {
                         Cell cell = sheet.getRow(row).getCell(col);
-                        cell.setCellType(Cell.CELL_TYPE_STRING);
+                        //cell.setCellType(Cell.CELL_TYPE_STRING);
+                        cell.setCellType(CellType.STRING);
                         value = sheet.getRow(row).getCell(col).toString().replaceAll("\n", "").trim();
                         value = replaceSpaceAndTabs(value);
                     } catch (Exception e) {
@@ -142,7 +144,8 @@ public class JiraUtil {
                         String key = sheet.getRow(0).getCell(col).toString();
                         try {
                             Cell cell = sheet.getRow(row).getCell(col);
-                            cell.setCellType(Cell.CELL_TYPE_STRING);
+                            //cell.setCellType(Cell.CELL_TYPE_STRING);
+                            cell.setCellType(CellType.STRING);
                             value = sheet.getRow(row).getCell(col).toString().trim();
                             value = replaceSpaceAndTabs(value);
                         } catch (Exception e) {

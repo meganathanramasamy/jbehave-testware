@@ -30,6 +30,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
+import static com.group.bdd.framework.ConfigLoader.config;
 import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
 
 public class SequenceBddRunner extends ConfigurableEmbedder {
@@ -142,6 +143,7 @@ public class SequenceBddRunner extends ConfigurableEmbedder {
 	}
     
     public void run() throws Throwable {
+        LOG.info("Execution Start - Sequence Meta Filters: " + config().getString("bdd.seqMetaFilter"));
         try {
             Embedder embedder = configuredEmbedder();
             embedder.useMetaFilters(asList(ConfigLoader.config().getString("bdd.seqMetaFilter")));
@@ -158,6 +160,7 @@ public class SequenceBddRunner extends ConfigurableEmbedder {
         } catch (Throwable t) {
             t.printStackTrace();
         }
+        LOG.info("Execution End - Sequence Meta Filters: " + config().getString("bdd.seqMetaFilter"));
     }
 
 }
