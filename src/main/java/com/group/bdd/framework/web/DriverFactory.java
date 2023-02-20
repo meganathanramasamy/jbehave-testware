@@ -39,6 +39,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.browserstack.local.Local;
+import com.group.bdd.framework.LogUtil;
+import org.json.JSONObject;
+import org.openqa.selenium.JavascriptExecutor;
+
+import org.openqa.selenium.remote.*;
+
+import java.net.*;
+import java.util.*;
+
 import static com.group.bdd.framework.Asserts.assertThat;
 import static com.group.bdd.framework.ConfigLoader.config;
 
@@ -51,18 +61,20 @@ class DriverFactory {
     private static final String CHROME = "chrome";
     private static final String IE = "ie";
     private static final String EDGE = "edge";
-    private static final String YES= "true";
+    private static final String YES = "true";
 
     private static WebDriver instance() {
         return instances.get();
     }
+
     public static boolean hasInstance() {
         if (instance() != null) {
             return true;
-        }else {
+        } else {
             return false;
         }
     }
+
     private static void setCapabilities(Capabilities capabilities) {
         capabilities = capabilities;
     }
@@ -98,6 +110,84 @@ class DriverFactory {
 
     }
 
+    private static void runBSLocal() {
+        LOG.info("Starting Browserstack Local");
+        Local bsLocal = new Local();
+        HashMap<String, String> bsLocalArgs = new HashMap<String, String>();
+        bsLocalArgs.put("key", ConfigLoader.config().getString("browserstack.accesskey"));
+        bsLocalArgs.put("v", "true");
+
+        String bsLocalAgentBinary = machineType();
+
+        if (Boolean.parseBoolean(ConfigLoader.config().getString("browserstackLocal.useproxy", "false"))) {
+            LOG.info("Setting proxy for bs local agent");
+            bsLocalArgs.put("proxyHost", ConfigLoader.config().getString("browserstackLocal.proxy.host", "outboundproxy.mclocal.int"));
+            bsLocalArgs.put("proxyPort", ConfigLoader.config().getString("browserstackLocal.proxy.port", "15768"));
+            System.getProperties().put("http.proxyHost", ConfigLoader.config().getString("browserstackLocal.proxy.host", "outboundproxy.mclocal.int"));
+            System.getProperties().put("http.proxyPort", ConfigLoader.config().getString("browserstackLocal.proxy.port", "15768"));
+            System.getProperties().put("https.proxyHost", ConfigLoader.config().getString("browserstackLocal.proxy.host", "outboundproxy.mclocal.int"));
+            System.getProperties().put("https.proxyPort", ConfigLoader.config().getString("browserstackLocal.proxy.port", "15768"));
+        }
+        String localIdentifier = rand_int;
+        bsLocalArgs.put("localIdentifier", localIdentifier);
+        bsLocalArgs.put("binarypath", bsLocalAgentBinary);
+        try {
+            bsLocal.start(bsLocalArgs);
+            LOG.info("BS local is launched");
+        } catch (Exception e) {
+            LOG.error("BS local is not launched - failed with exception = " + e);
+            assertThat("BS local is not launched - failed with exception =" + e, false);
+        }
+    }
+
+    private static String machineType() {
+        LOG.info("USER DIR: " + System.getProperty("user.dir"));
+        String bsLocalAgentBinary = System.getProperty("user.dir") + "/libs/browserstack";
+        String OS_NAME = System.getProperty("os.name").toLowerCase();
+        if (isLinux(OS_NAME)) {
+            bsLocalAgentBinary = machineTypeLinux(bsLocalAgentBinary);
+        } else if (isWindows(OS_NAME)) {
+            bsLocalAgentBinary = machineTypeWindows(bsLocalAgentBinary);
+        } else if (isMac(OS_NAME)) {
+            bsLocalAgentBinary = machineTypeMac(bsLocalAgentBinary);
+        } else {
+            assertThat("Your OS [" + OS_NAME + "] is not supported by bs local agent!!", false);
+        }
+        return bsLocalAgentBinary;
+    }
+
+    private static boolean isWindows(String OS_NAME) {
+        return (OS_NAME.indexOf("win") >= 0);
+    }
+
+    private static boolean isMac(String OS_NAME) {
+        return (OS_NAME.indexOf("mac") >= 0);
+    }
+
+    private static boolean isLinux(String OS_NAME) {
+        return (OS_NAME.indexOf("nux") >= 0);
+    }
+
+    private static String machineTypeLinux(String bsLocalAgentBinary) {
+        LOG.info("This is Linux");
+        bsLocalAgentBinary += "/linux/BrowserStackLocal";
+        return bsLocalAgentBinary;
+    }
+
+    private static String machineTypeWindows(String bsLocalAgentBinary) {
+        LOG.info("This is Windows");
+        bsLocalAgentBinary += "/windows/BrowserStackLocal.exe";
+        return bsLocalAgentBinary;
+    }
+
+    private static String machineTypeMac(String bsLocalAgentBinary) {
+        LOG.info("This is Mac");
+        bsLocalAgentBinary += "/macOS/BrowserStackLocal";
+        return bsLocalAgentBinary;
+    }
+
+    static String rand_int = "jbehave-test-" + Integer.toString(new Random().nextInt(1000));
+
     private static WebDriver createRemoteDriver() {
         LoggingPreferences logs = new LoggingPreferences();
         logs.enable(LogType.BROWSER, java.util.logging.Level.OFF);
@@ -105,8 +195,51 @@ class DriverFactory {
         Configuration.timeout = 10000;
         int retryCount = 5, retryAttempt = 1;
         RemoteWebDriver result = null;
+        LOG.info("Creating Remote WebDriver");
         try {
-            if (!Strings.isNullOrEmpty(GRID_URL) && isGridAvailable(GRID_URL)) {
+            if (ConfigLoader.config().getString("browserstack.test", "N").equals("Y")) {
+                String url = String.format(ConfigLoader.config().getString("browserstack.url"),
+                        ConfigLoader.config().getString("browserstack.user"),
+                        ConfigLoader.config().getString("browserstack.accesskey"));
+
+                LOG.info("Setting base capabilities for BrowserStack Driver...");
+                DesiredCapabilities capabilities = new DesiredCapabilities();
+                capabilities.setCapability("browserstack.debug", false);
+                capabilities.setCapability("browserstack.local", ConfigLoader.config().getString("browserstack.local").equals("true") ? true : false);
+                capabilities.setCapability("browserstack.networkLogs", false);
+                capabilities.setCapability("resolution", "1920x1080");
+                capabilities.setCapability("browserstack.localIdentifier", rand_int);
+                capabilities.setCapability("browserstack.autoWait", 0);
+                capabilities.setCapability("acceptSslCerts", ConfigLoader.config().getString("browserstack.accept.ssl.certs") == "true" ? true : false);
+                capabilities.setCapability("os", ConfigLoader.config().getString("browserstack.os"));
+                capabilities.setCapability("os_version", ConfigLoader.config().getString("browserstack.os_version"));
+                capabilities.setCapability("browser", ConfigLoader.config().getString("browserstack.browser"));
+                capabilities.setCapability("browser_version", ConfigLoader.config().getString("browserstack.browser_version"));
+                capabilities.setCapability("project", ConfigLoader.config().getString("Project.Name"));
+
+                String name = String.format("Jbehave Automation[Env='%s' & Meta='%s']",
+                        ConfigLoader.config().getString("test.environment").toUpperCase(),
+                        ConfigLoader.config().getString("bdd.metaFilter"));
+
+                capabilities.setCapability("buildName", name);
+                capabilities.setCapability("name", AllureReporter.currentScenario.get());
+                LOG.info("Setting base BrowserStack Capabilities as: " + capabilities.asMap());
+
+                if(ConfigLoader.config().getString("browserstack.local").equals("true")){
+                    runBSLocal();
+                }
+                result = new RemoteWebDriver(new URL(url), capabilities);
+                LOG.info("Created createRemoteDriver");
+
+                JavascriptExecutor jse = (JavascriptExecutor)result;
+                String response = jse.executeScript("browserstack_executor: {\"action\": \"getSessionDetails\"}").toString();
+                JSONObject json = new JSONObject(response);
+                AllureReporter.sessionInfo.set((String) json.get("hashed_id"));
+                LogUtil.log("Public URL: " + (String) json.get("public_url"));
+                LogUtil.logAttachmentJson("Browser session info: " , json.toString());
+
+                return result;
+            } else if (!Strings.isNullOrEmpty(GRID_URL) && isGridAvailable(GRID_URL)) {
 
                 //log.info("Using Selenium grid at {}", GRID_URL);
                 String browserType = config().getString("webdriver.browser", "ie");
@@ -114,14 +247,14 @@ class DriverFactory {
                 //log.info("Creating driver for browser {}", browserType);
                 URL gridUrl = new URL(GRID_URL);
 
-                try{
-                    if(BrowserDriver.hasInstance()){
+                try {
+                    if (BrowserDriver.hasInstance()) {
                         LOG.info("BrowserDriver has instance. Closing it..");
                         BrowserDriver.closeDriver();
                         Thread.sleep(10000);
                     }
                     result = new RemoteWebDriver(gridUrl, getCapabilities(browserType));
-                }catch (UnreachableBrowserException ex){
+                } catch (UnreachableBrowserException ex) {
                     Asserts.assertThat("Error: UnreachableBrowserException." + ex.getLocalizedMessage(), false);
                 }
 
@@ -198,7 +331,7 @@ class DriverFactory {
 
                     return new ChromeDriver(options);
 
-                } else if ("edge".equalsIgnoreCase(config().getString("webdriver.browser"))){
+                } else if ("edge".equalsIgnoreCase(config().getString("webdriver.browser"))) {
 
                     //Get local Edge driver
                     String file = new File("src/main/resources/").getAbsoluteFile().toString();
@@ -206,12 +339,12 @@ class DriverFactory {
 
                     //Get current MS Edge version
                     String edgeVersion = getEdgeBrowserVersion();
-                    String path = file + "EdgeDriver\\" + edgeVersion +"\\msedgedriver.exe";
+                    String path = file + "EdgeDriver\\" + edgeVersion + "\\msedgedriver.exe";
 
-                    if (!new File(path).isFile()){
+                    if (!new File(path).isFile()) {
                         //Specific driver version NOT found, use default version instead.
                         path = file + "msedgedriver.exe";
-                        LOG.info("MS EdgeDriver version " + edgeVersion+ " not found. Using default EdgeDriver version.");
+                        LOG.info("MS EdgeDriver version " + edgeVersion + " not found. Using default EdgeDriver version.");
                     }
 
                     System.setProperty("webdriver.edge.driver", path);
@@ -234,7 +367,7 @@ class DriverFactory {
     }
 
     private static boolean isVideoRecording() {
-        return YES.equalsIgnoreCase(config().getString("webdriver.video","false"));
+        return YES.equalsIgnoreCase(config().getString("webdriver.video", "false"));
     }
 
     public static void closeDriver() {
@@ -376,7 +509,7 @@ class DriverFactory {
         try {
             /*BufferedReader reader = execCmd(
                     "cmd /c wmic product where \"Name = 'Microsoft Edge'\" get Version | find /v \"Version\"");*/
-            String edgeLoc = config().getString("edge.location").replace("\\","\\\\");
+            String edgeLoc = config().getString("edge.location").replace("\\", "\\\\");
             String cmd = "cmd /c wmic datafile where 'name=" + edgeLoc + "' get version | find /v \"Version\"";
             BufferedReader reader = execCmd(cmd);
             String line = "";

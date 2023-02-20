@@ -39,6 +39,12 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.*;
 
+import org.openqa.selenium.JavascriptExecutor;
+import javax.xml.bind.DatatypeConverter;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 public class AllureReporter implements StoryReporter {
 
     private static final Logger LOG = LogManager.getLogger(AllureReporter.class);
@@ -59,6 +65,8 @@ public class AllureReporter implements StoryReporter {
     
     private static final ThreadLocal<String> currentSuite = new ThreadLocal<>();
 	private static final ThreadLocal<String> currentSuiteName = new ThreadLocal<>();
+
+    public static ThreadLocal<String> sessionInfo = new ThreadLocal<>();
 	
 	public static String storyName(){
 		return currentSuiteName.get();
@@ -246,7 +254,45 @@ public class AllureReporter implements StoryReporter {
         allure.fire(new TestCaseFinishedEvent());
 
         String failedReason = isStepFailed.get() != false ? stepFailed.get().getLocalizedMessage() : "";
+        updateBrowserStack(failedReason);
         jiraClient.prepareExecutionResults(currentScenario.get(), scenarioTitle2Description.get(currentScenario.get()), isStepFailed.get(), failedReason);
+    }
+
+    private static void updateBrowserStack(String reason) {
+        try {
+            if (null != sessionInfo.get() && !sessionInfo.get().equals("")) {
+                LOG.info("Updating test status to Browserstack for hashed_id: " + sessionInfo.get());
+                String status = isStepFailed.get() != false ? "failed" : "passed";
+                String uri = String.format("https://api.browserstack.com/automate/sessions/%s.json", sessionInfo.get());
+                String json = String.format("{\"status\":\"%s\", \"reason\":\"%s\"}", status, reason.replaceAll("\n", " "));
+
+                URL url = new URL(uri);
+                HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
+                httpConn.setRequestMethod("PUT");
+
+                httpConn.setRequestProperty("Content-Type", "application/json");
+
+                byte[] message = (String.format("%s:%s", ConfigLoader.config().getString("browserstack.user"), ConfigLoader.config().getString("browserstack.accesskey"))).getBytes("UTF-8");
+                String basicAuth = DatatypeConverter.printBase64Binary(message);
+                httpConn.setRequestProperty("Authorization", "Basic " + basicAuth);
+
+                httpConn.setDoOutput(true);
+                OutputStreamWriter writer = new OutputStreamWriter(httpConn.getOutputStream());
+                writer.write(json);
+                writer.flush();
+                writer.close();
+                httpConn.getOutputStream().close();
+
+                InputStream responseStream = httpConn.getResponseCode() / 100 == 2
+                        ? httpConn.getInputStream()
+                        : httpConn.getErrorStream();
+                Scanner s = new Scanner(responseStream).useDelimiter("\\A");
+                String response = s.hasNext() ? s.next() : "";
+                LOG.info("After Update: " + response);
+            }
+        } catch (Exception ex) {
+            LOG.info("Error occurred during browserstack update. Error=" + ex.getMessage());
+        }
     }
 
     public void storyNotAllowed(Story story, String filter) {
